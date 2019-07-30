@@ -1,12 +1,12 @@
 {
     "presets": [
-        ["env", {
+        ["env", { // tells babel to use the babel-env file for settings
             "targets": {
                 "browsers": [
                     "> 1%",
-                    "last 2 versions"
+                    "last 2 versions" // the browsers to support
                 ]
             }
-        }], "react"
+        }], "react" // tells babel it will be transpiling React code
     ]
 }
