@@ -3,10 +3,11 @@ const autoprefixer = require("autoprefixer"); // webpack config uses Node JS so 
 
 module.exports = {
   devtool: "cheap-module-eval-source-map", // configs the type of sources maps generated, this is best
-  entry: "./src/index.html", // where the app should be loaded from
+  entry: "./src/index.js", // where the app should be loaded from
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"), // Where to put the dist folder
+    filename: "bundle.js", // what to name buidl file
+    chunkFilename: "[id].js", // filenames for lazy loaded code
     publicPath: ""
   }, // the build output
   resolve: { extensions: [".js", ".jsx"] }, // the file extensions to build

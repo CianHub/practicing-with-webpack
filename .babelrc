@@ -7,6 +7,7 @@
                     "last 2 versions" // the browsers to support
                 ]
             }
-        }], "react" // tells babel it will be transpiling React code
-    ]
+        }], "stage-2", "react" // tells babel it will be transpiling React code, and to use stage-2 presets
+    ],
+    "plugins": ["syntax-dynamic-import"] //plugins for babel to use
 }
