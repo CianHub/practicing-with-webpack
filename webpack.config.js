@@ -1,5 +1,6 @@
 const path = require("path");
 const autoprefixer = require("autoprefixer"); // webpack config uses Node JS so it uses require syntax etc
+const htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   devtool: "cheap-module-eval-source-map", // configs the type of sources maps generated, this is best
@@ -44,5 +45,13 @@ module.exports = {
       } /* configures webpack to use the url-loader, includes a queryparam to set the max file size limit = 80kb and name = folder to store images in (images folder) and
       files should be formatted as filename.extensions e.g. pizza.png*/
     ]
-  }
+  },
+  plugins: [
+    // configs webpack plugins
+    new htmlWebpackPlugin({
+      template: __dirname + "/src/index.html",
+      filename: "index.html", //the output file, running server its tored in memory, in build its an actual file
+      inject: "body"
+    })
+  ] // this plugin connects webpack to the index.html file
 };
