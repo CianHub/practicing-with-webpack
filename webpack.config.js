@@ -5,9 +5,9 @@ module.exports = {
   devtool: "cheap-module-eval-source-map", // configs the type of sources maps generated, this is best
   entry: "./src/index.html", // where the app should be loaded from
   output: {
-    path: "",
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: path.resolve(__dirname, "dist")
+    publicPath: ""
   }, // the build output
   resolve: { extensions: [".js", ".jsx"] }, // the file extensions to build
   module: {
