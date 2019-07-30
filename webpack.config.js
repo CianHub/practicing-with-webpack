@@ -36,7 +36,12 @@ module.exports = {
           }
         ],
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/, // what to do for image files (png, jpe, jpeg, gif), what loader to use what to exclude from build
+        loader: "url-loader?limit=80000&name=images/[name].[ext] file-loader"
+      } /* configures webpack to use the url-loader, includes a queryparam to set the max file size limit = 80kb and name = folder to store images in (images folder) and
+      files should be formatted as filename.extensions e.g. pizza.png*/
     ]
   }
 };
