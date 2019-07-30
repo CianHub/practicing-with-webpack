@@ -1,13 +1,16 @@
 {
     "presets": [
-        ["env", { // tells babel to use the babel-env file for settings
+        ["env", {
             "targets": {
                 "browsers": [
                     "> 1%",
-                    "last 2 versions" // the browsers to support
+                    "last 2 versions"
                 ]
-            }
-        }], "stage-2", "react" // tells babel it will be transpiling React code, and to use stage-2 presets
+            },
+            "useBuiltIns": "entry"
+        }],
+        "stage-2",
+        "react"
     ],
     "plugins": ["syntax-dynamic-import"] //plugins for babel to use
 }
